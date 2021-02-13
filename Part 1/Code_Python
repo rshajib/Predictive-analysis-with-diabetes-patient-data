@@ -1,0 +1,54 @@
+#import important library for decision tree
+import numpy as np #numpy library
+import pandas as pd #read csv file 
+from sklearn.model_selection import train_test_split #split dataset
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report,confusion_matrix,accuracy_score #for report ,confusion matrix and accuracy test 
+ 
+In [81]:
+dataset=pd.read_csv('decision tree final.csv')#Read CSV data
+ 
+In [82]:
+dataset.fillna( method ='ffill', inplace = True) #Fill missing values
+ 
+In [ ]:
+# Import label encoder 
+from sklearn import preprocessing 
+  
+# label_encoder object knows how to understand word labels. 
+label_encoder = preprocessing.LabelEncoder() 
+  
+# Encode labels 
+dataset= label_encoder.fit_transform(dataset) 
+ 
+x=dataset.drop('18 Recommendation',axis=1) #Independent variables
+ 
+y=dataset['18 Recommendation'] #dependent variables
+ 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)#here we take 33% data as a test data
+ 
+classifier=DecisionTreeClassifier()#create object for Decision tree
+classifier.fit(X_train,y_train) #fit the model
+ 
+#Test accuracy score
+score=accuracy_score(y_test,label_pred)
+score
+ 
+#confusion matrix
+cm=confusion_matrix(y_label_test,label_pred)
+cm
+ 
+#For predicting Estimated ER
+x=dataset.drop('Estimated ER',axis=1) #Independent variables
+ 
+y=dataset['Estimated ER']
+ 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)#here we take 33% data as a test data
+ 
+classifier=DecisionTreeClassifier()#create object for Decision tree
+classifier.fit(X_train,y_train) #fit the model
+
+#Test accuracy score
+score=accuracy_score(y_test,label_pred)
+score
+
