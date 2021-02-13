@@ -1,5 +1,5 @@
 # Predictive-analysis-with-diabetes-patient-data
-Instructor: Dr. Bon K. Sy
+Instructor: Dr. Bon K Sy
 
 First part of the project predicts diabetes patient behavior from a smaller dataset for 6 weeks. The prediction model includes Decision Tree and Linear Regression. The first part includes a model evaluation where the accuracy of the model is over 70%.
 
